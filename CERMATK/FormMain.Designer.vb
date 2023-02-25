@@ -60,22 +60,33 @@ Partial Class FormMain
         Me.RoleName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RoleAccess = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabVoucher = New System.Windows.Forms.TabPage()
+        Me.dgvSuppliers = New System.Windows.Forms.DataGridView()
+        Me.btnDeleteSupplier = New System.Windows.Forms.Button()
+        Me.btnEditSupplier = New System.Windows.Forms.Button()
+        Me.btnAddSupplier = New System.Windows.Forms.Button()
+        Me.SupplierID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SupplierPhone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SupplierEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SupplierAddress = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tabs.SuspendLayout()
         Me.TabHome.SuspendLayout()
         Me.TabProduct.SuspendLayout()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabSupplier.SuspendLayout()
         Me.TabRole.SuspendLayout()
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvSuppliers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(10, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(170, 45)
+        Me.Label1.Size = New System.Drawing.Size(172, 45)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "CERMATK"
         '
@@ -86,9 +97,9 @@ Partial Class FormMain
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogout.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnLogout.Location = New System.Drawing.Point(709, 16)
+        Me.btnLogout.Location = New System.Drawing.Point(608, 14)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(105, 34)
+        Me.btnLogout.Size = New System.Drawing.Size(90, 29)
         Me.btnLogout.TabIndex = 1
         Me.btnLogout.Text = "LOGOUT"
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -104,10 +115,10 @@ Partial Class FormMain
         Me.Tabs.Controls.Add(Me.TabAdmin)
         Me.Tabs.Controls.Add(Me.TabRole)
         Me.Tabs.Controls.Add(Me.TabVoucher)
-        Me.Tabs.Location = New System.Drawing.Point(12, 66)
+        Me.Tabs.Location = New System.Drawing.Point(10, 57)
         Me.Tabs.Name = "Tabs"
         Me.Tabs.SelectedIndex = 0
-        Me.Tabs.Size = New System.Drawing.Size(802, 386)
+        Me.Tabs.Size = New System.Drawing.Size(687, 335)
         Me.Tabs.TabIndex = 2
         '
         'TabHome
@@ -120,10 +131,10 @@ Partial Class FormMain
         Me.TabHome.Controls.Add(Me.btnProducts)
         Me.TabHome.Controls.Add(Me.Label2)
         Me.TabHome.Controls.Add(Me.labelGreeting)
-        Me.TabHome.Location = New System.Drawing.Point(4, 24)
+        Me.TabHome.Location = New System.Drawing.Point(4, 22)
         Me.TabHome.Name = "TabHome"
         Me.TabHome.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabHome.Size = New System.Drawing.Size(794, 358)
+        Me.TabHome.Size = New System.Drawing.Size(679, 309)
         Me.TabHome.TabIndex = 0
         Me.TabHome.Text = "Home"
         Me.TabHome.UseVisualStyleBackColor = True
@@ -134,9 +145,9 @@ Partial Class FormMain
         Me.btnVoucher.FlatAppearance.BorderSize = 0
         Me.btnVoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVoucher.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnVoucher.Location = New System.Drawing.Point(182, 225)
+        Me.btnVoucher.Location = New System.Drawing.Point(156, 195)
         Me.btnVoucher.Name = "btnVoucher"
-        Me.btnVoucher.Size = New System.Drawing.Size(131, 35)
+        Me.btnVoucher.Size = New System.Drawing.Size(112, 30)
         Me.btnVoucher.TabIndex = 2
         Me.btnVoucher.Text = "Manage Voucher"
         Me.btnVoucher.UseVisualStyleBackColor = False
@@ -147,9 +158,9 @@ Partial Class FormMain
         Me.btnAdmin.FlatAppearance.BorderSize = 0
         Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdmin.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnAdmin.Location = New System.Drawing.Point(182, 184)
+        Me.btnAdmin.Location = New System.Drawing.Point(156, 159)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(131, 35)
+        Me.btnAdmin.Size = New System.Drawing.Size(112, 30)
         Me.btnAdmin.TabIndex = 2
         Me.btnAdmin.Text = "Manage Admin"
         Me.btnAdmin.UseVisualStyleBackColor = False
@@ -160,9 +171,9 @@ Partial Class FormMain
         Me.btnRoles.FlatAppearance.BorderSize = 0
         Me.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRoles.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnRoles.Location = New System.Drawing.Point(35, 225)
+        Me.btnRoles.Location = New System.Drawing.Point(30, 195)
         Me.btnRoles.Name = "btnRoles"
-        Me.btnRoles.Size = New System.Drawing.Size(131, 35)
+        Me.btnRoles.Size = New System.Drawing.Size(112, 30)
         Me.btnRoles.TabIndex = 2
         Me.btnRoles.Text = "Manage Roles"
         Me.btnRoles.UseVisualStyleBackColor = False
@@ -173,9 +184,9 @@ Partial Class FormMain
         Me.btnSuppliers.FlatAppearance.BorderSize = 0
         Me.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSuppliers.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnSuppliers.Location = New System.Drawing.Point(35, 184)
+        Me.btnSuppliers.Location = New System.Drawing.Point(30, 159)
         Me.btnSuppliers.Name = "btnSuppliers"
-        Me.btnSuppliers.Size = New System.Drawing.Size(131, 35)
+        Me.btnSuppliers.Size = New System.Drawing.Size(112, 30)
         Me.btnSuppliers.TabIndex = 2
         Me.btnSuppliers.Text = "Manage Supplier"
         Me.btnSuppliers.UseVisualStyleBackColor = False
@@ -186,9 +197,9 @@ Partial Class FormMain
         Me.btnCustomers.FlatAppearance.BorderSize = 0
         Me.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCustomers.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnCustomers.Location = New System.Drawing.Point(182, 143)
+        Me.btnCustomers.Location = New System.Drawing.Point(156, 124)
         Me.btnCustomers.Name = "btnCustomers"
-        Me.btnCustomers.Size = New System.Drawing.Size(131, 35)
+        Me.btnCustomers.Size = New System.Drawing.Size(112, 30)
         Me.btnCustomers.TabIndex = 2
         Me.btnCustomers.Text = "Manage Customers"
         Me.btnCustomers.UseVisualStyleBackColor = False
@@ -199,9 +210,9 @@ Partial Class FormMain
         Me.btnProducts.FlatAppearance.BorderSize = 0
         Me.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProducts.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnProducts.Location = New System.Drawing.Point(35, 143)
+        Me.btnProducts.Location = New System.Drawing.Point(30, 124)
         Me.btnProducts.Name = "btnProducts"
-        Me.btnProducts.Size = New System.Drawing.Size(131, 35)
+        Me.btnProducts.Size = New System.Drawing.Size(112, 30)
         Me.btnProducts.TabIndex = 2
         Me.btnProducts.Text = "Manage Products"
         Me.btnProducts.UseVisualStyleBackColor = False
@@ -209,18 +220,18 @@ Partial Class FormMain
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(35, 96)
+        Me.Label2.Location = New System.Drawing.Point(30, 83)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(181, 15)
+        Me.Label2.Size = New System.Drawing.Size(161, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Here's some quick action for you"
         '
         'labelGreeting
         '
         Me.labelGreeting.AutoSize = True
-        Me.labelGreeting.Font = New System.Drawing.Font("Segoe UI", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.labelGreeting.Font = New System.Drawing.Font("Segoe UI", 27.75!)
         Me.labelGreeting.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.labelGreeting.Location = New System.Drawing.Point(25, 27)
+        Me.labelGreeting.Location = New System.Drawing.Point(21, 23)
         Me.labelGreeting.Name = "labelGreeting"
         Me.labelGreeting.Size = New System.Drawing.Size(244, 50)
         Me.labelGreeting.TabIndex = 0
@@ -232,10 +243,10 @@ Partial Class FormMain
         Me.TabProduct.Controls.Add(Me.btnEditProduct)
         Me.TabProduct.Controls.Add(Me.btnAddProduct)
         Me.TabProduct.Controls.Add(Me.dgvProducts)
-        Me.TabProduct.Location = New System.Drawing.Point(4, 24)
+        Me.TabProduct.Location = New System.Drawing.Point(4, 22)
         Me.TabProduct.Name = "TabProduct"
         Me.TabProduct.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabProduct.Size = New System.Drawing.Size(794, 358)
+        Me.TabProduct.Size = New System.Drawing.Size(679, 309)
         Me.TabProduct.TabIndex = 1
         Me.TabProduct.Text = "Products"
         Me.TabProduct.UseVisualStyleBackColor = True
@@ -246,9 +257,9 @@ Partial Class FormMain
         Me.btnDeleteProduct.FlatAppearance.BorderSize = 0
         Me.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDeleteProduct.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnDeleteProduct.Location = New System.Drawing.Point(491, 319)
+        Me.btnDeleteProduct.Location = New System.Drawing.Point(421, 276)
         Me.btnDeleteProduct.Name = "btnDeleteProduct"
-        Me.btnDeleteProduct.Size = New System.Drawing.Size(95, 28)
+        Me.btnDeleteProduct.Size = New System.Drawing.Size(81, 24)
         Me.btnDeleteProduct.TabIndex = 1
         Me.btnDeleteProduct.Text = "DELETE"
         Me.btnDeleteProduct.UseVisualStyleBackColor = False
@@ -259,9 +270,9 @@ Partial Class FormMain
         Me.btnEditProduct.FlatAppearance.BorderSize = 0
         Me.btnEditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditProduct.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnEditProduct.Location = New System.Drawing.Point(592, 319)
+        Me.btnEditProduct.Location = New System.Drawing.Point(507, 276)
         Me.btnEditProduct.Name = "btnEditProduct"
-        Me.btnEditProduct.Size = New System.Drawing.Size(95, 28)
+        Me.btnEditProduct.Size = New System.Drawing.Size(81, 24)
         Me.btnEditProduct.TabIndex = 1
         Me.btnEditProduct.Text = "EDIT"
         Me.btnEditProduct.UseVisualStyleBackColor = False
@@ -272,9 +283,9 @@ Partial Class FormMain
         Me.btnAddProduct.FlatAppearance.BorderSize = 0
         Me.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddProduct.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnAddProduct.Location = New System.Drawing.Point(693, 319)
+        Me.btnAddProduct.Location = New System.Drawing.Point(594, 276)
         Me.btnAddProduct.Name = "btnAddProduct"
-        Me.btnAddProduct.Size = New System.Drawing.Size(95, 28)
+        Me.btnAddProduct.Size = New System.Drawing.Size(81, 24)
         Me.btnAddProduct.TabIndex = 1
         Me.btnAddProduct.Text = "ADD NEW"
         Me.btnAddProduct.UseVisualStyleBackColor = False
@@ -285,10 +296,10 @@ Partial Class FormMain
         Me.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProducts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductID, Me.ProductName, Me.ProductDescription, Me.ProductUnit, Me.ProductStock, Me.ProductSellPrice, Me.ProductPurchasePrice, Me.ProductSupplierID, Me.ProductSupplier})
-        Me.dgvProducts.Location = New System.Drawing.Point(6, 3)
+        Me.dgvProducts.Location = New System.Drawing.Point(5, 3)
         Me.dgvProducts.Name = "dgvProducts"
         Me.dgvProducts.RowTemplate.Height = 25
-        Me.dgvProducts.Size = New System.Drawing.Size(785, 305)
+        Me.dgvProducts.Size = New System.Drawing.Size(673, 264)
         Me.dgvProducts.TabIndex = 0
         '
         'ProductID
@@ -340,30 +351,34 @@ Partial Class FormMain
         '
         'TabCustomer
         '
-        Me.TabCustomer.Location = New System.Drawing.Point(4, 24)
+        Me.TabCustomer.Location = New System.Drawing.Point(4, 22)
         Me.TabCustomer.Name = "TabCustomer"
         Me.TabCustomer.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabCustomer.Size = New System.Drawing.Size(794, 358)
+        Me.TabCustomer.Size = New System.Drawing.Size(679, 309)
         Me.TabCustomer.TabIndex = 2
         Me.TabCustomer.Text = "Customer"
         Me.TabCustomer.UseVisualStyleBackColor = True
         '
         'TabSupplier
         '
-        Me.TabSupplier.Location = New System.Drawing.Point(4, 24)
+        Me.TabSupplier.Controls.Add(Me.btnDeleteSupplier)
+        Me.TabSupplier.Controls.Add(Me.btnEditSupplier)
+        Me.TabSupplier.Controls.Add(Me.btnAddSupplier)
+        Me.TabSupplier.Controls.Add(Me.dgvSuppliers)
+        Me.TabSupplier.Location = New System.Drawing.Point(4, 22)
         Me.TabSupplier.Name = "TabSupplier"
         Me.TabSupplier.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabSupplier.Size = New System.Drawing.Size(794, 358)
+        Me.TabSupplier.Size = New System.Drawing.Size(679, 309)
         Me.TabSupplier.TabIndex = 3
         Me.TabSupplier.Text = "Supplier"
         Me.TabSupplier.UseVisualStyleBackColor = True
         '
         'TabAdmin
         '
-        Me.TabAdmin.Location = New System.Drawing.Point(4, 24)
+        Me.TabAdmin.Location = New System.Drawing.Point(4, 22)
         Me.TabAdmin.Name = "TabAdmin"
         Me.TabAdmin.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabAdmin.Size = New System.Drawing.Size(794, 358)
+        Me.TabAdmin.Size = New System.Drawing.Size(679, 309)
         Me.TabAdmin.TabIndex = 4
         Me.TabAdmin.Text = "Admin"
         Me.TabAdmin.UseVisualStyleBackColor = True
@@ -374,10 +389,10 @@ Partial Class FormMain
         Me.TabRole.Controls.Add(Me.btnEditRole)
         Me.TabRole.Controls.Add(Me.btnAddRole)
         Me.TabRole.Controls.Add(Me.dgvRoles)
-        Me.TabRole.Location = New System.Drawing.Point(4, 24)
+        Me.TabRole.Location = New System.Drawing.Point(4, 22)
         Me.TabRole.Name = "TabRole"
         Me.TabRole.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabRole.Size = New System.Drawing.Size(794, 358)
+        Me.TabRole.Size = New System.Drawing.Size(679, 309)
         Me.TabRole.TabIndex = 5
         Me.TabRole.Text = "Role"
         Me.TabRole.UseVisualStyleBackColor = True
@@ -388,9 +403,9 @@ Partial Class FormMain
         Me.btnDeleteRole.FlatAppearance.BorderSize = 0
         Me.btnDeleteRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDeleteRole.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnDeleteRole.Location = New System.Drawing.Point(491, 323)
+        Me.btnDeleteRole.Location = New System.Drawing.Point(421, 280)
         Me.btnDeleteRole.Name = "btnDeleteRole"
-        Me.btnDeleteRole.Size = New System.Drawing.Size(95, 28)
+        Me.btnDeleteRole.Size = New System.Drawing.Size(81, 24)
         Me.btnDeleteRole.TabIndex = 2
         Me.btnDeleteRole.Text = "DELETE"
         Me.btnDeleteRole.UseVisualStyleBackColor = False
@@ -401,9 +416,9 @@ Partial Class FormMain
         Me.btnEditRole.FlatAppearance.BorderSize = 0
         Me.btnEditRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditRole.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnEditRole.Location = New System.Drawing.Point(592, 323)
+        Me.btnEditRole.Location = New System.Drawing.Point(507, 280)
         Me.btnEditRole.Name = "btnEditRole"
-        Me.btnEditRole.Size = New System.Drawing.Size(95, 28)
+        Me.btnEditRole.Size = New System.Drawing.Size(81, 24)
         Me.btnEditRole.TabIndex = 3
         Me.btnEditRole.Text = "EDIT"
         Me.btnEditRole.UseVisualStyleBackColor = False
@@ -414,9 +429,9 @@ Partial Class FormMain
         Me.btnAddRole.FlatAppearance.BorderSize = 0
         Me.btnAddRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddRole.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnAddRole.Location = New System.Drawing.Point(693, 323)
+        Me.btnAddRole.Location = New System.Drawing.Point(594, 280)
         Me.btnAddRole.Name = "btnAddRole"
-        Me.btnAddRole.Size = New System.Drawing.Size(95, 28)
+        Me.btnAddRole.Size = New System.Drawing.Size(81, 24)
         Me.btnAddRole.TabIndex = 4
         Me.btnAddRole.Text = "ADD NEW"
         Me.btnAddRole.UseVisualStyleBackColor = False
@@ -427,10 +442,10 @@ Partial Class FormMain
         Me.dgvRoles.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvRoles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RoleID, Me.RoleName, Me.RoleAccess})
-        Me.dgvRoles.Location = New System.Drawing.Point(6, 6)
+        Me.dgvRoles.Location = New System.Drawing.Point(5, 5)
         Me.dgvRoles.Name = "dgvRoles"
         Me.dgvRoles.RowTemplate.Height = 25
-        Me.dgvRoles.Size = New System.Drawing.Size(782, 311)
+        Me.dgvRoles.Size = New System.Drawing.Size(670, 270)
         Me.dgvRoles.TabIndex = 1
         '
         'RoleID
@@ -454,19 +469,101 @@ Partial Class FormMain
         '
         'TabVoucher
         '
-        Me.TabVoucher.Location = New System.Drawing.Point(4, 24)
+        Me.TabVoucher.Location = New System.Drawing.Point(4, 22)
         Me.TabVoucher.Name = "TabVoucher"
         Me.TabVoucher.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabVoucher.Size = New System.Drawing.Size(794, 358)
+        Me.TabVoucher.Size = New System.Drawing.Size(679, 309)
         Me.TabVoucher.TabIndex = 6
         Me.TabVoucher.Text = "Voucher"
         Me.TabVoucher.UseVisualStyleBackColor = True
         '
+        'dgvSuppliers
+        '
+        Me.dgvSuppliers.BackgroundColor = System.Drawing.SystemColors.ControlLight
+        Me.dgvSuppliers.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSuppliers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SupplierID, Me.SupplierName, Me.SupplierPhone, Me.SupplierEmail, Me.SupplierAddress})
+        Me.dgvSuppliers.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvSuppliers.Location = New System.Drawing.Point(4, 3)
+        Me.dgvSuppliers.Name = "dgvSuppliers"
+        Me.dgvSuppliers.Size = New System.Drawing.Size(672, 268)
+        Me.dgvSuppliers.TabIndex = 0
+        '
+        'btnDeleteSupplier
+        '
+        Me.btnDeleteSupplier.BackColor = System.Drawing.Color.DarkRed
+        Me.btnDeleteSupplier.FlatAppearance.BorderSize = 0
+        Me.btnDeleteSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDeleteSupplier.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.btnDeleteSupplier.Location = New System.Drawing.Point(419, 277)
+        Me.btnDeleteSupplier.Name = "btnDeleteSupplier"
+        Me.btnDeleteSupplier.Size = New System.Drawing.Size(81, 24)
+        Me.btnDeleteSupplier.TabIndex = 5
+        Me.btnDeleteSupplier.Text = "DELETE"
+        Me.btnDeleteSupplier.UseVisualStyleBackColor = False
+        '
+        'btnEditSupplier
+        '
+        Me.btnEditSupplier.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnEditSupplier.FlatAppearance.BorderSize = 0
+        Me.btnEditSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditSupplier.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.btnEditSupplier.Location = New System.Drawing.Point(505, 277)
+        Me.btnEditSupplier.Name = "btnEditSupplier"
+        Me.btnEditSupplier.Size = New System.Drawing.Size(81, 24)
+        Me.btnEditSupplier.TabIndex = 6
+        Me.btnEditSupplier.Text = "EDIT"
+        Me.btnEditSupplier.UseVisualStyleBackColor = False
+        '
+        'btnAddSupplier
+        '
+        Me.btnAddSupplier.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnAddSupplier.FlatAppearance.BorderSize = 0
+        Me.btnAddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddSupplier.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.btnAddSupplier.Location = New System.Drawing.Point(592, 277)
+        Me.btnAddSupplier.Name = "btnAddSupplier"
+        Me.btnAddSupplier.Size = New System.Drawing.Size(81, 24)
+        Me.btnAddSupplier.TabIndex = 7
+        Me.btnAddSupplier.Text = "ADD NEW"
+        Me.btnAddSupplier.UseVisualStyleBackColor = False
+        '
+        'SupplierID
+        '
+        Me.SupplierID.HeaderText = "ID"
+        Me.SupplierID.Name = "SupplierID"
+        Me.SupplierID.Visible = False
+        '
+        'SupplierName
+        '
+        Me.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.SupplierName.HeaderText = "Name"
+        Me.SupplierName.Name = "SupplierName"
+        '
+        'SupplierPhone
+        '
+        Me.SupplierPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.SupplierPhone.HeaderText = "Phone"
+        Me.SupplierPhone.Name = "SupplierPhone"
+        '
+        'SupplierEmail
+        '
+        Me.SupplierEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.SupplierEmail.HeaderText = "Email"
+        Me.SupplierEmail.Name = "SupplierEmail"
+        '
+        'SupplierAddress
+        '
+        Me.SupplierAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.SupplierAddress.FillWeight = 200.0!
+        Me.SupplierAddress.HeaderText = "Address"
+        Me.SupplierAddress.Name = "SupplierAddress"
+        '
         'FormMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(826, 464)
+        Me.ClientSize = New System.Drawing.Size(708, 402)
         Me.Controls.Add(Me.Tabs)
         Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.Label1)
@@ -478,8 +575,10 @@ Partial Class FormMain
         Me.TabHome.PerformLayout()
         Me.TabProduct.ResumeLayout(False)
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabSupplier.ResumeLayout(False)
         Me.TabRole.ResumeLayout(False)
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvSuppliers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -523,4 +622,13 @@ Partial Class FormMain
     Friend WithEvents btnDeleteRole As Button
     Friend WithEvents btnEditRole As Button
     Friend WithEvents btnAddRole As Button
+    Friend WithEvents dgvSuppliers As DataGridView
+    Friend WithEvents btnDeleteSupplier As Button
+    Friend WithEvents btnEditSupplier As Button
+    Friend WithEvents btnAddSupplier As Button
+    Friend WithEvents SupplierID As DataGridViewTextBoxColumn
+    Friend WithEvents SupplierName As DataGridViewTextBoxColumn
+    Friend WithEvents SupplierPhone As DataGridViewTextBoxColumn
+    Friend WithEvents SupplierEmail As DataGridViewTextBoxColumn
+    Friend WithEvents SupplierAddress As DataGridViewTextBoxColumn
 End Class
